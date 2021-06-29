@@ -1,0 +1,4 @@
+[web]
+url=http://127.0.0.1/caiji/get.php
+time=15
+error=5

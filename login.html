@@ -1,0 +1,82 @@
+
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登陆</title>
+
+<link rel="stylesheet" type="text/css" href="login.css">
+
+</head>
+<body>
+
+	<style>
+	html,body{margin:0;padding:0}
+	</style>
+	<div style="height:100%;overflow:hidden;margin:0;padding:0">
+		<div class="login-html">
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked /><label for="tab-1" class="tab">登录</label>
+			<input id="tab-2" type="radio" name="tab" class="sign-up" /><label for="tab-2" class="tab">注册</label>
+			<div class="login-form">
+				<div class="sign-in-htm">
+				<form action="index.php" method="post">
+                	<input type="hidden" name="verify" value="n2oqcvVPpk1M">
+					<div class="group">
+						<label for="user" class="label">用户名</label>
+						<input id="user" name="uname" type="text" class="input" />
+					</div>
+					<div class="group">
+						<label for="pass" class="label">密码</label>
+						<input id="pass" name="upass" type="password" class="input" data-type="password" />
+					</div>
+					
+					<div class="group">
+						<input type="submit" class="button" value="登录" style="height:40px;" />
+					</div>
+                   
+                    <div class="group">
+						<input type="button" class="button" value="微信登录" style="height:40px;" onClick="location.href='/qr.php?logintype=wx'"/>
+					</div>
+                    <div style="text-align: center; line-height: 30px; margin-top: 10px;">
+			<a href="javascript:void(0)" class="forget" style="color: #fdfdfe;">忘记密码?请联系客服</a>
+	</div>
+                    <!--<div class="group">
+                    <a href="javascript:;" style="display:block;float:left;margin-right:10px;font-size:14px;color:#fff;text-align:center;font:none !important;">其它登录方式</a>
+                    <a href="/qr.php?logintype=bywx" style="display:block;float:right;margin-right:10px;font-size:16px;color:#fff;text-align:center;font:none !important;">微信登陆</a>
+                    </div>-->
+					</form>
+				</div>
+				<div class="sign-up-htm">
+				<form action="index.php" method="post">
+                
+                <input type="hidden" name="way" value="reg">
+                	<input type="hidden" name="verify" value="n2oqcvVPpk1M">
+					<div class="group">
+					<input id="user" name="way" type="hidden" class="input" value="reg" />
+						<label for="user" class="label">用户名</label>
+						<input id="user" name="uname" type="text" class="input" />
+					</div>
+					<div class="group">
+						<label for="pass" class="label">密码</label>
+						<input id="pass" name="upass" type="password" class="input" data-type="password" />
+					</div>
+					<div class="group">
+						<label for="pass" class="label">确认密码</label>
+						<input id="pass" name="rupass" type="password" class="input" data-type="password" />
+					</div>
+					
+					<div class="group">
+						<input type="submit" class="button" value="注册"  style="height:40px;" />
+					</div>
+				
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head><title>
+        财务中心
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" type="text/css" href="css/userPay.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    
+   <link rel="stylesheet" type="text/css" href="js/webuploader/webuploader.css">
+    <style>
+    	#uploader{
+    		display: inline-table;
+    	}
+    	.webuploader-pick {
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+			background: #FFF;
+			color: #CBCBCB;
+			font-size: 50px;
+			text-align: center;
+			border:1px solid #CBCBCB;
+			border-radius: 3px;
+			overflow: hidden;
+			height: 35px;
+    		line-height: 35px;
+    		padding: 0px 15px
+		}
+		.success{
+			color: #009900;
+			border:1px solid #009900;
+		}
+		.webuploader-pick-hover {
+
+		}
+		
+		.webuploader-pick-disable {
+			opacity: 0.6;
+			pointer-events:none;
+		}
+    </style>
+
+</head>
+<body>
+<div id="loadingPicBlock" style="max-width: 720px;margin:0 auto;" class="pay">
+    <header class="g-header">
+
+        <div class="head-l">
+            
+        </div>
+        <h2>财务中心</h2>
+        <div class="head-r">
+            <a href="/qr.php?room=1" class="z-HReturn" data-dismiss="modal" aria-hidden="true"><s></s><b>首页</b></a>
+        </div>
+    </header>
+
+    <div class="g-Total gray9">亲爱的 <?php echo $info['username'];?> 请认真填写以下信息！</div>
+    <section class="clearfix g-member">
+        <form action="index.php?do=submit" method="post" onsubmit="return false">
+            <article class="clearfix mt10 m-round g-pay-ment g-bank-ct">
+                <ul id="ulBankList">
+                    <li class="gray6" style="width: 100%;padding: 5px 0px 0px 10px;height: 50px;">可提金额：
+                    	<label class="input" style="height: 35px;font-size:30px;color: red;">
+                    		<?php echo $info['money']?>
+                    		<input type="hidden" name="money_count" value="<?php echo $info['money']?>" />
+                    	</label> 元
+                    </li>
+                    <li class="gray6" style="width: 100%;padding: 5px 0px 0px 10px;height: 50px;">输入手机号码：
+                    	<label class="input" style="border: 1px solid #EAEAEA;height: 35px;font-size:30px;">
+                            <input type="text" name="mobile" id="mobile" placeholder="如：1388888888"
+                                   style="width: 170px;color: red;font-size:20px;">
+                        </label> 
+                    </li>
+
+                    <li class="gray6" style="width: 100%;padding: 5px 0px 0px 10px;height: 50px;">选择提现方式：
+
+                    	<label class="radio" >
+                            <input type="radio" name="money_type" value="1" checked="checked" />微信
+                            <input type="radio" name="money_type" value="2" />支付宝
+                        </label> 
+                    </li>
+                    <li class="gray6" style="width: 100%;padding: 5px 0px 0px 10px;height: 50px;float: left;">
+                    	<span>微信或支付宝收款码：</span>
+						<span>
+
+                    		<div id="uploader">
+							    <!--用来存放item-->
+							    <div id="fileList" class="uploader-list"></div>
+							    <div id="filePicker">上传</div>
+							    
+							</div>
+							<input id="qrcode_url" type="hidden" name="qrcode_url" value="">
+						</span>
+ 
+                    </li>
+                    <li class="gray6" style="width: 100%;padding: 5px 0px 0px 10px;height: 50px;">输入提现金额：<label
+                            class="input" style="border: 1px solid #EAEAEA;height: 35px;font-size:30px;">
+                            <input type="text" name="money" id="money" placeholder="如：2000"
+                                   style="width: 170px;color: red;font-size:20px;">
+                        </label> 元
+                    </li>
+                    <li class="gray6"
+                        style="width: 100%;padding: 5px 0px 0px 10px;display: inline;height: 50px;">
+                        当前用户名：<label>
+								<?php echo $info['username']?>     　　　　温馨提示:所有提现5分钟内到帐！                       
+								
+                        </label></li>
+                    
+                </ul>
+            </article>
+			<input type="hidden" name="userid" id="userid"  value="<?php echo $info[userid]?>">
+
+            <div class="mt10 f-Recharge-btn">
+
+                <button  id="btnSubmit" type="submit" href="javascript:;" class="orgBtn">立即提现</button>
+            </div>
+        </form>
+    </section>
+
+    <input id="hidIsHttps" type="hidden" value="0"/>
+	<!--引入JS-->
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/webuploader/webuploader.min.js"></script>
+    <script language="javascript" type="text/javascript">
+	// 初始化Web Uploader
+	var uploader = WebUploader.create({
+	
+	    // 选完文件后，是否自动上传。
+	    auto: true,
+	
+	    // swf文件路径
+	    swf:  'js/webuploader/Uploader.swf',
+	
+	    // 文件接收服务端。
+	    server: 'index.php?do=upload',
+	
+	    // 选择文件的按钮。可选。
+	    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+	    pick: '#filePicker',
+	
+	    // 只允许选择图片文件。
+	    accept: {
+	        title: 'Images',
+	        extensions: 'gif,jpg,jpeg,bmp,png',
+	        mimeTypes: 'image/*'
+	    }
+	    
+	});
+	uploader.on( 'uploadSuccess', function( file,data ) {
+	    //console.debug('uploadSuccess',file,data);
+	    $('.webuploader-pick').text('上传完成')
+	    $('.webuploader-pick').addClass('success');
+	    $("#qrcode_url").val(data.url);
+	});
+	// 完成上传完了，成功或者失败，先删除进度条。
+	uploader.on( 'uploadComplete', function( file ) {
+
+	});
+    $(function () {
+    	$('#btnSubmit').on('click',function(){
+    		$.post($('form').attr("action"), $('form').serialize(),function(data){
+	        	if(data.status==0){
+	        		alert(data.msg);
+	        	}else{
+	        		window.location.href="/Templates/user/";
+	        		alert(data.msg);
+	        	}
+	       	},'json');
+    	})
+           
+    });
+
+    </script>
+
+
+</div>
+</body>
+</html>
+

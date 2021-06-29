@@ -1,0 +1,1959 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url('font-awesome.min.css');
+
+@font-face {
+    font-family: mstiffhei;
+    src: url("../fonts/mstiffhei.eot");
+    src: url("../fonts/mstiffhei.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/mstiffhei.woff") format("woff"),
+    url("../fonts/mstiffhei.ttf") format("truetype"),
+    url("../fonts/mstiffhei.svg#mstiffhei") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body,
+html,
+section,
+html,
+body,
+body a,
+body p,
+body span,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+li,
+table {
+    font-family: 'adineue-regular', "微软雅黑", "微軟正黑體", "Microsoft JhengHei", "Microsoft YaHei", Arial;
+}
+
+
+/* Reset */
+
+ul li {
+    list-style: none;
+}
+
+
+
+/* Loadiing */
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+    background: url(../images/loading.gif) no-repeat center center #000;
+    background-size: 380px auto;
+}
+
+/* 上方文字與期數 */
+    #top_periods {
+        position: relative;
+        width: 100%;
+        height: 10vw;
+        text-align: center;
+        font-size: 5vw;
+        font-weight: bold;
+        color: #FFF;
+        background: url(../images/topbg2.jpg) repeat-x center 50%;
+    }
+
+    #top_periods .text1 {
+        position: absolute;
+        left: 15px;
+        top: 0px;
+        line-height: 10vw;
+    }
+
+    #top_periods .text2 {
+        position: relative;
+        width: 100%;
+        color: #d7c000;
+        text-align: center;
+        line-height: 10vw;
+    }
+
+    #top_periods .text3 {
+        position: absolute;
+        right: 15px;
+        top: 0px;
+        line-height: 10vw;
+    }
+
+
+
+
+/*-----------遊戲區域-----------*/
+
+#content {
+    width: 100%;
+    height: 53vw;
+    font-family: mstiffhei;
+    background: url(../images/waiting_bg.jpg) #a7a9ac;
+    background-size: cover;
+    position: relative;
+}
+
+
+/*等待頁面*/
+
+.waiting {
+    width: 30%;
+    height: 30%;
+    color: #FFF;
+    position: absolute;
+    left: 8%;
+    top: 23%;
+}
+
+.waiting .t1 {
+    font-family: Arial;
+    font-size: 2.5vw;
+    margin-bottom: 0px;
+}
+
+.waiting .t2 {
+    font-family: mstiffhei;
+    font-size: 2.2vw;
+}
+
+.waiting .t3 {
+    font-family: mstiffhei;
+    font-size: 4.6vw;
+    margin-left: -0.5vw;
+}
+
+.waiting .t1,
+.waiting .t2,
+.waiting .t3 {
+    margin-bottom: 0;
+}
+
+
+
+/*----- 等待畫面圓點動畫 start -----*/
+.spinner {
+  margin: 1em auto 0 0.2em;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width:  1vw;
+  height: 1vw;
+  background-color: #FFF;
+
+  border-radius: 99em;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+/*-----等待畫面圓點動畫 start-----*/
+
+/*遊戲內容*/
+
+#game_content {
+    width: 100%;
+    height: 52vw;
+    font-family: mstiffhei;
+    background: url(../images/game_bg.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+
+#game {
+    width: 96%;
+    height: 50vw;
+    position: absolute;
+    left: 2%;
+    top: 1%;
+}
+
+#game .game_left {
+    width: 57vw;
+    height: 100%;
+    position: relative;
+    float: left;
+    margin: auto;
+    text-align: center;
+}
+
+#game .game_left a {
+    text-decoration: none;
+}
+
+
+/*撲克牌本體*/
+
+#game .game_left .poker {
+    position: relative;
+    width: 49vw;
+    height: 37vw;
+    margin: auto;
+    top: 12%;
+
+    /*transform: scale(1.1, 1.1);*/
+    /*-ms-transform: scale(1.1, 1.1);*/
+    /* IE 9 */
+    /*-webkit-transform: scale(1.1, 1.1);*/
+    /* Safari 和 Chrome */
+    /*-o-transform: scale(1.1, 1.1);*/
+    /* Opera */
+    /*-moz-transform: scale(1.1, 1.1);*/
+}
+
+#game .game_left .poker.r90 {
+    transition-property: width, height, transform, background, font-size, opacity;
+    transition-duration: 0.5s, 0.5s, 0.5s, 0.5s, 0.5s, 0.5s;
+    transform: rotate(90deg);
+}
+
+
+/*橫式按鈕們*/
+
+#game .game_left .btn_area_vertical {
+    position: absolute;
+    width: 49vw;
+    height: 37vw;
+    z-index: 99;
+    text-align: center;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+}
+
+#game .game_left .btn_area_vertical .frame {
+    position: relative;
+    height: 100%;
+}
+
+#game .game_left .btn_area_vertical .btn_rotate {
+    width: 7.4vw;
+    height: 7.4vw;
+    /*F
+    background: url("../images/rotate.png") center center;
+    background-size: cover;
+*/
+    position: absolute;
+    display: block;
+    z-index: 99;
+    margin: auto;
+    /*    text-align: center;*/
+    top: 50%;
+    left: 42.3%;
+    transform: translateY(-50%);
+}
+
+#game .game_left .btn_area_vertical .btn_open {
+    width: 7.4vw;
+    height: 7.4vw;
+    position: absolute;
+    background-color: #FFF;
+    border-radius: 1.5vw;
+    right: 3vw;
+    top: 3vw;
+    display: block;
+    font-size: 2vw;
+    color: #000;
+    font-weight: bold;
+    line-height: 7vw;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+#game .game_left .btn_area_vertical .btn_lift {
+    width: 7.4vw;
+    height: 7.4vw;
+    position: absolute;
+    background-color: #FFF;
+    border-radius: 1.5vw;
+    left: 0;
+    bottom: 0;
+    padding: 1vw 0;
+    display: block;
+    opacity: 0.7;
+}
+
+#game .game_left .btn_area_vertical .btn_up {
+    width: 35vw;
+    height: 7.4vw;
+    position: absolute;
+    bottom: 0;
+    /*    right: 15px; */
+    left: 0;
+    padding: 1vw 0;
+    display: block;
+    border-radius: 1.5vw;
+    background-color: #FFF;
+    opacity: 0.7;
+}
+
+#game .game_left .btn_area_vertical a {
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+#game .game_left .btn_area_vertical a.btn_open:hover,
+#game .game_left .btn_area_vertical a.btn_lift:hover,
+#game .game_left .btn_area_vertical a.btn_up:hover {
+    opacity: 1;
+}
+
+#canvas {
+    width: 49vw;
+    height: 37vw;
+    border-radius: 3vw;
+}
+
+/*直式按鈕們*/
+
+#game .game_left .btn_area_horizontal {
+    position: absolute;
+    width: 36.8vw;
+    height: 49vw;
+    z-index: 99;
+    text-align: center;
+    top: -6vw;
+    left: 6vw;
+}
+
+#game .game_left .btn_area_horizontal .btn_rotate {
+    width: 7.4vw;
+    height: 7.4vw;
+    background: url("../images/rotate.png") center center;
+    background-size: cover;
+    position: relative;
+    display: block;
+    z-index: 99;
+    margin: auto;
+    top: 42%;
+}
+
+#game .game_left .btn_area_horizontal .btn_open {
+    width: 7.4vw;
+    height: 7.4vw;
+    position: absolute;
+    background-color: #FFF;
+    border-radius: 1.5vw;
+    right: 3vw;
+    top: 3vw;
+    display: block;
+    font-size: 2vw;
+    color: #000;
+    font-weight: bold;
+    line-height: 7vw;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+#game .game_left .btn_area_horizontal .btn_lift {
+    width: 7.4vw;
+    height: 7.4vw;
+    position: absolute;
+    background-color: #FFF;
+    border-radius: 1.5vw;
+    left: 3vw;
+    bottom: 3vw;
+    display: block;
+    opacity: 0.7;
+}
+
+#game .game_left .btn_area_horizontal .btn_up {
+    width: 100%;
+    height: 7.4vw;
+    position: absolute;
+    bottom: 0vw;
+    right: 0vw;
+    padding: 1vw 0;
+    display: block;
+
+    border-bottom-right-radius: 3vw;
+    border-bottom-left-radius: 3vw;
+
+    background-color: #FFF;
+    opacity: 0.7;
+}
+
+#game .game_left .btn_area_horizontal a {
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+#game .game_left .btn_area_horizontal a.btn_open:hover,
+#game .game_left .btn_area_horizontal a.btn_lift:hover,
+#game .game_left .btn_area_horizontal a.btn_up:hover {
+    opacity: 1;
+}
+
+
+
+/*game 右邊區域*/
+
+#game .game_right {
+    width: 39%;
+    height: auto;
+    float: right;
+    position: relative;
+}
+
+#game .game_right .logo {
+    width: 100%;
+    height: 6vw;
+    margin-top: 5%;
+    position: relative;
+}
+
+#game .game_right .logo .logopic {
+    width: 15%;
+    height: auto;
+    position: relative;
+    float: left;
+    margin-right: 2%;
+}
+
+#game .game_right .logo p {
+    font-family: mstiffhei;
+    font-size: 4.3vw;
+    color: #FFF;
+    float: left;
+    margin: 0;
+}
+
+#game .game_right .time_area {
+    width: 100%;
+    height: 5vw;
+    margin-left: 0;
+    position: relative;
+    color: #FFF;
+    clear: both;
+}
+
+#game .game_right .time_area p {
+    width: 60%;
+    font-family: "微软雅黑", "微軟正黑體", "Microsoft JhengHei";
+    font-size: 2.3vw;
+    line-height: 5.2vw;
+    display: inline-block;
+}
+
+#game .game_right .time_area .times {
+    font-family: Arial, sans-serif;
+    font-size: 2.5vw;
+    line-height: 4.8vw;
+    display: block;
+    position: absolute;
+    right: 5%;
+    top: 0;
+}
+
+#game .game_right .time_area .times span {
+    font-size: 3.6vw;
+    font-weight: bold;
+}
+
+#game .game_right .poker_s {
+    width: 100%;
+    height: 28vw;
+    margin-top: 2%;
+    position: relative;
+    clear: both;
+}
+
+#game .game_right .bank,
+#game .game_right .player {
+    width: 100%;
+    height: 12.5vw;
+    margin-bottom: 1%;
+    position: relative;
+}
+#game .game_right .bank .t1 p{
+    background-color: #F00;
+}
+#game .game_right .player .t2 p{
+    background-color: #00F;
+}
+#game .game_right .poker_s .t1,
+#game .game_right .poker_s .t2 {
+    width: 17%;
+    height: 12.5vw;
+    float: left;
+    text-align: center;
+}
+
+#game .game_right .poker_s .t1 p,
+#game .game_right .poker_s .t2 p {
+    width: 5vw;
+    height: 5vw;
+    display: block;
+    margin: 4vw 0 0 1vw;
+    font-size: 3.5vw;
+    line-height: 5vw;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    font-family: SimHei, "Microsoft JhengHei", "Microsoft YaHei";
+    color: #FFF;
+
+    /*border: 4px solid #FFF;*/
+    border-radius: 999em;
+    -webkit-border-radius: 999em;
+    -moz-border-radius: 999em;
+    -ms-border-radius: 999em;
+}
+
+#game .game_right .poker_s .p1,
+#game .game_right .poker_s .p2 {
+    width: 83%;
+    height: 12.5vw;
+    float: left;
+}
+
+#game .game_right .poker_s ul {
+    width: 100%;
+    padding: 0;
+    text-align: left;
+}
+
+#game .game_right .poker_s .line {
+    width: 80%;
+    height: 1px;
+    margin: 2% 1% 2% 19%;
+    border-top: 1px solid #FFF;
+}
+
+#game .game_right .poker_s ul li {
+    width: 29%;
+    float: left;
+    margin: 1% 2%;
+}
+
+#game .game_right .poker_s ul li.highlight {
+    border-radius: 0.7vw;
+    -webkit-box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+    -moz-box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+}
+
+/*點選右邊撲克，放大顯示至左邊時，右邊撲克牌會發光*/
+
+#game .game_right .poker_s ul li p {
+    width: 30%;
+    text-align: center;
+    vertical-align: middle;
+    display: block;
+    color: #FFF;
+    font-size: 3vw;
+    line-height: 4vw;
+    margin-left: 33%;
+}
+
+#game .game_right .poker_s ul li a {
+    display: block;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+#game .game_right .poker_s ul li a:hover {
+    border-radius: 0.5vw;
+    -webkit-box-shadow: 0 0 10px 2px rgba(255, 217, 0, 0.8);
+    -moz-box-shadow: 0 0 10px 2px rgba(255, 217, 0, 0.8);
+    box-shadow: 0 0 10px 2px rgba(255, 217, 0, 0.8);
+}
+
+#game .game_right .btn_open {
+    width: 90%;
+    height: 5vw;
+    margin: 0 2% 0 8%;
+    padding: 0 15%;
+    line-height: 5vw;
+    background: #000;
+    text-align: center;
+    color: #FFF;
+    font-size: 2vw;
+    display: block;
+    text-decoration: none;
+
+    font-family: 'adineue-regular', "微软雅黑", "微軟正黑體", "Microsoft JhengHei";
+    letter-spacing: 0.2em;
+    border-radius: 1vw;
+    -webkit-border-radius: 1vw;
+    -moz-border-radius: 1vw;
+}
+
+#game .game_right a.btn_open {
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+#game .game_right a.btn_open:hover {
+    background: #b2a102;
+    color: #FFF;
+}
+
+
+
+
+/*-----------下方記分板-----------*/
+
+#score {
+    width: 100%;
+    margin: auto;
+    padding: 0 auto;
+    position: absolute;
+    bottom: 0;
+
+    /*放大
+    overflow-y:hidden;
+    margin-top: 30%;*/
+}
+
+
+/*表格開始*/
+
+.gamepaper {
+    width: 100%;
+    height: 25vw;
+    margin: 0px auto;
+    background-color:rgba(40,58,46,0.6);
+
+    /*display:flex;
+    -webkit-display:flex;
+    -moz-display:flex;
+
+    justify-content:center;
+    -webkit-content:center;
+    -moz-content:center;
+
+    放大
+    transform: scale(1.5,1.5);
+    margin: 100px auto;*/
+}
+
+
+/*---------- 路紙 ---------*/
+
+/*路紙左邊*/
+
+.gamepaper .paper1 {
+    width: 28vw;
+    -webkit-width: 36vw;
+    -moz-width: 36vw;
+    color: #FFF;
+    font-weight: bold;
+    position: relative;
+    float: left;
+    /*border: 1px solid #405b4a;*/
+}
+
+.gamepaper .paper1 td {
+    width: 4vw;
+    -webkit-width: 4vw;
+    -moz-width: 4vw;
+    -ms-width: 4vw;
+
+    height: 4vw;
+    -webkit-height: 4vw;
+    -moz-height: 4vw;
+    -ms-height: 4vw;
+
+    border: 1px solid #405b4a;
+    text-align: center;
+    font-size: 2.5vw;
+    -webkit-font-size: 2.5vw;
+    -moz-font-size: 2.5vw;
+    -ms-font-size: 2.5vw;
+    line-height: 3vw;
+    position: relative;
+}
+
+.gamepaper .paper1 td p.bgcircle_red,
+.gamepaper .paper1 td p.bgcircle_blue,
+.gamepaper .paper1 td p.bgcircle_green {
+    width: 3.6vw;
+    height: 3.6vw;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    line-height: 3.6vw;
+    border-radius: 999em;
+    -webkit-border-radius: 999em;
+    -moz-border-radius: 999em;
+    -ms-border-radius: 999em;
+    vertical-align: middle;
+    color: #FFF;
+}
+
+.gamepaper .paper1 td p.bgcircle_red {
+    background-color: #ff3000;
+}
+
+.gamepaper .paper1 td p.bgcircle_blue {
+    background-color: #3d58ff;
+}
+
+.gamepaper .paper1 td p.bgcircle_green {
+    background-color: #00a650;
+}
+
+
+/*左邊路紙-標註左上右下小圓*/
+
+.gamepaper .paper1 td .dot_red {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: 15;
+    background: url(../images/dot_red.png) no-repeat;
+    background-size: cover;
+    /*border: 0.5px solid #FFF;
+    border-radius: 999em;
+    -webkit-border-radius: 999em;
+    -moz-border-radius: 999em;*/
+    left: 0;
+    top: 0;
+    /*background-color: #ff3000;*/
+}
+
+.gamepaper .paper1 td .dot_blue {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    z-index: 15;
+    background: url(../images/dot_blue.png) no-repeat;
+    background-size: cover;
+    /*border: 1px solid #FFF;
+    border-radius: 999em;
+    -webkit-border-radius: 999em;
+    -moz-border-radius: 999em;*/
+    right: 0;
+    bottom: 0;
+    /*background-color: #2e3192;*/
+}
+
+
+/*--------路紙右邊------------*/
+
+.gamepaper .paper2 {
+    width: 70vw;
+    position: relative;
+    float: left;
+}
+
+.gamepaper .paper2 .pokerroad_area{
+    width: 35vw;
+    overflow: hidden;
+    /*margin-left: 0.3vw;*/
+    /*border-left: 1px solid #405b4a;*/
+    border-right: 1px solid #405b4a;
+}
+
+.gamepaper .paper2 .pokerroad{
+    width: 51vw;
+}
+.gamepaper .paper2 .pokerroad td {
+    width: 2vw;
+    height: 2vw;
+    border: 1px solid #405b4a;
+    text-align: center;
+    position: relative;
+}
+
+/*三個標注: 圓圈與XX*/
+
+.gamepaper .paper2 td p.note_red,
+.gamepaper .paper2 td p.note_blue,
+.gamepaper .paper2 td p.note_green {
+    position: absolute;
+    width: 1.8vw;
+    height: 1.8vw;
+    left: 2%;
+    top: 2%;
+    vertical-align: middle;
+    border-radius: 99em;
+    -webkit-border-radius: 99em;
+    -moz-border-radius: 99em;
+    -o-border-radius: 99em;
+}
+
+.gamepaper .paper2 td p.note_red {
+    border: 3px solid #ff3000;
+}
+
+.gamepaper .paper2 td p.note_blue {
+    border: 3px solid #3d58ff;
+}
+
+.gamepaper .paper2 td p.note_green {
+    top: 0;
+    background: url(../images/note_green2.png) no-repeat center center;
+    background-size: cover;
+    color: #FFF;
+    font-size: 1.3vw;
+    line-height: 1.8vw;
+}
+
+/*後蓋前蓋掉*/
+
+/*標註左上右下小圓*/
+
+.gamepaper .paper2 td .dot_red,
+.gamepaper .paper2 td .dot_blue {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 100;
+    /*border: 0.5px solid #FFF;
+    border-radius: 999em;
+    -webkit-border-radius: 999em;
+    -moz-border-radius: 999em;*/
+}
+
+.gamepaper .paper2 td .dot_red {
+    left: 0;
+    top: 0;
+    /*background-color: #ff3000;*/
+    background: url(../images/dot_red.png) no-repeat;
+    background-size: cover;
+}
+
+.gamepaper .paper2 td .dot_blue {
+    right: 0;
+    bottom: 0;
+    /*background-color: #3d58ff;*/
+    background: url(../images/dot_blue.png) no-repeat;
+    background-size: cover;
+}
+
+
+/*空心小圓*/
+
+.gamepaper .paper2 td .hollow_circle_red,
+.gamepaper .paper2 td .hollow_circle_blue {
+    width: 1.7vw;
+    height: 1.7vw;
+    margin: auto;
+    position: relative;
+    display: block;
+    border-radius: 999em;
+    -webkit-border-radius: 999em;
+    -moz-border-radius: 999em;
+}
+
+.gamepaper .paper2 td .hollow_circle_red {
+    border: 2px solid #ff3000;
+}
+
+.gamepaper .paper2 td .hollow_circle_blue {
+    border: 2px solid #3d58ff;
+}
+
+
+/*實心小圓*/
+
+.gamepaper .paper2 td .solid_circle_red,
+.gamepaper .paper2 td .solid_circle_blue {
+    width: 1.7vw;
+    height: 1.7vw;
+    position: relative;
+    display: inline-block;
+    border-radius: 999em;
+    -webkit-border-radius: 999em;
+    -moz-border-radius: 999em;
+}
+
+.gamepaper .paper2 td .solid_circle_red {
+    background: #ff3000;
+}
+
+.gamepaper .paper2 td .solid_circle_blue {
+    background: #3d58ff;
+}
+
+
+/*虛線*/
+
+.gamepaper .paper2 td .slash_red,
+.gamepaper .paper2 td .slash_blue {
+    width: 1.7vw;
+    height: 1.7vw;
+    position: relative;
+}
+
+.gamepaper .paper2 td .slash_red {
+    background: url(../images/slash_red.png) no-repeat center center;
+}
+
+.gamepaper .paper2 td .slash_blue {
+    background: url(../images/slash_blue.png) no-repeat center center;
+}
+
+.gamepaper .paper2 td .tag1 {
+    left: 0;
+    top: 0;
+}
+
+.gamepaper .paper2 td .tag2 {
+    right: 0;
+    top: 0;
+}
+
+.gamepaper .paper2 td .tag3 {
+    left: 0;
+    bottom: 0;
+}
+
+.gamepaper .paper2 td .tag4 {
+    right: 0;
+    bottom: 0;
+}
+
+
+
+
+
+
+/*輸贏動畫+和局動畫*/
+
+#banker_animate {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    z-index: 999999;
+    background: rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+
+#banker_animate .bankermc {
+    width: 40%;
+    height: 25%;
+    position: relative;
+    margin: 0 auto;
+    top: 25%;
+    animation: bankermc 1s;
+}
+
+@keyframes bankermc {
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+    80% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+    90% {
+        transform: scale(1.1, 1.1);
+        opacity: 0.9;
+        top: 25%;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+@-webkit-keyframes bankermc {
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+    80% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+    90% {
+        transform: scale(1.1, 1.1);
+        opacity: 0.9;
+        top: 25%;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+@-moz-keyframes bankermc {
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+    80% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+    90% {
+        transform: scale(1.1, 1.1);
+        opacity: 0.9;
+        top: 25%;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+@-o-keyframes bankermc {
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+    80% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+    90% {
+        transform: scale(1.1, 1.1);
+        opacity: 0.9;
+        top: 25%;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+
+
+#player_animate {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    z-index: 999999;
+    background: rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+
+#player_animate .playermc {
+    width: 40%;
+    height: 25%;
+    position: relative;
+    margin: 0 auto;
+    top: 25%;
+
+    animation: playermc 1s;
+}
+
+@keyframes playermc {
+
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+@-webkit-keyframes playermc {
+
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+@-moz-keyframes playermc {
+
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+@-o-keyframes playermc {
+
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+
+#draw_animate {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    z-index: 999999;
+    background: rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+
+#draw_animate .drawmc {
+    width: 40%;
+    height: 25%;
+    position: relative;
+    margin: 0 auto;
+    top: 25%;
+
+    animation: drawmc 1s;
+}
+
+@keyframes drawmc {
+
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+@-webkit-keyframes drawmc {
+
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+@-moz-keyframes drawmc {
+
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+@-o-keyframes drawmc {
+
+    0% {
+        transform: scale(8, 8);
+        opacity: 0;
+        top: 25%;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 25%;
+    }
+}
+
+
+
+/* ----------------------動畫關閉按鈕--------------------------- */
+#banker_animate a.resultclose,
+#player_animate a.resultclose,
+#draw_animate a.resultclose{
+    width: 16vw;
+    height: 5vw;
+    position: absolute;
+    top: 40vw;
+    left: 42vw;
+    padding: 0 1%;
+    line-height: 5.2vw;
+    background: #000;
+    text-align: center;
+    color: #FFF;
+    font-family: 'adineue-regular', "微软雅黑", "微軟正黑體", "Microsoft JhengHei";
+    font-size: 2vw;
+    display: block;
+    text-decoration: none;
+
+    border: 1px solid #CCC;
+    border-radius: 1vw;
+    -webkit-border-radius: 1vw;
+    -moz-border-radius: 1vw;
+
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+#banker_animate a.resultclose:hover,
+#player_animate a.resultclose:hover,
+#draw_animate a.resultclose:hover{
+    background: #b2a102;
+    border: 1px solid #CCC;
+    color: #FFF;
+}
+
+#banker_animate a.resultclose{
+    animation: bankermcclose 1.5s;
+}
+@keyframes bankermcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+@-webkit-keyframes bankermcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+@-moz-keyframes bankermcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+@-o-keyframes bankermcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+
+#player_animate a.resultclose{
+    animation: playermcclose 1.5s;
+}
+@keyframes playermcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+@-webkit-keyframes playermcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+@-moz-keyframes playermcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+@-o-keyframes playermcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+#draw_animate a.resultclose{
+    animation: drawmcclose 1.5s;
+}
+@keyframes drawmcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+@-webkit-keyframes drawmcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+@-moz-keyframes drawmcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+@-o-keyframes drawmcclose {
+
+    0% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    50% {
+        transform: scale(1, 1);
+        opacity: 0;
+        top: 42vw;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+        top: 40vw;
+    }
+}
+
+
+
+
+
+
+
+/*-----RWD setting---------*/
+
+@media only screen and (max-width: 1366px) {
+    /*index 等待遊戲頁面*/
+    .waiting {
+        width: 30%;
+        height: 30%;
+        color: #FFF;
+        position: absolute;
+        left: 8%;
+        top: 23%;
+    }
+
+
+    /*game 遊戲頁面*/
+    #game .game_right .poker_s {
+
+        height: 29vw;
+        margin-top: 4%;
+    }
+    #game .game_right .bank,
+    #game .game_right .player {
+        height: 13vw;
+        margin-top: 1vw;
+    }
+
+    #game .game_right .poker_s .t1,
+    #game .game_right .poker_s .t2 {
+        height: 13vw;
+    }
+
+    #game .game_right .poker_s .p1,
+    #game .game_right .poker_s .p2 {
+        height: 13vw;
+    }
+
+    #game .game_right .btn_open {
+        padding: 0 15%;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    /*game 遊戲頁面*/
+    #game .game_right .poker_s {
+
+        height: 29vw;
+        margin-top: 4%;
+    }
+    #game .game_right .bank,
+    #game .game_right .player {
+        height: 13vw;
+        margin-top: 1vw;
+    }
+
+    #game .game_right .poker_s .t1,
+    #game .game_right .poker_s .t2 {
+        height: 13vw;
+    }
+
+    #game .game_right .poker_s .p1,
+    #game .game_right .poker_s .p2 {
+        height: 13vw;
+    }
+
+    #game .game_right .btn_open {
+
+        padding: 0 15%;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /*index 等待遊戲頁面*/
+    .waiting {
+        width: 30%;
+        height: 30%;
+        color: #FFF;
+        position: absolute;
+        left: 8%;
+        top: 23%;
+    }
+
+    /*game 遊戲頁面
+    #game .game_right .poker_s {
+
+        height: 29vw;
+        margin-top: 4%;
+    }
+    #game .game_right .bank,
+    #game .game_right .player {
+        height: 13vw;
+        margin-top: 1vw;
+    }
+
+    #game .game_right .poker_s .t1,
+    #game .game_right .poker_s .t2 {
+        height: 13vw;
+    }
+
+    #game .game_right .poker_s .p1,
+    #game .game_right .poker_s .p2 {
+        height: 13vw;
+    }
+
+    #game .game_right .btn_open {
+
+        padding: 0 15%;
+    }*/
+}
+
+@media only screen and (max-width: 990px) {}
+
+@media only screen and (max-width: 767px) {
+    /*index 等待遊戲頁面*/
+    .waiting {
+        width: 30%;
+        height: 30%;
+        color: #FFF;
+        position: absolute;
+        left: 8%;
+        top: 23%;
+    }
+
+
+    /*左邊路紙-標註左上右下小圓*/
+    .gamepaper .paper1 td .dot_red {
+        width: 8px;
+        height: 8px;
+    }
+
+    .gamepaper .paper1 td .dot_blue {
+        width: 8px;
+        height: 8px;
+    }
+
+
+    /*右邊路紙*/
+    /*三個標注: 圓圈與XX*/
+    .gamepaper .paper2 td p.note_red,
+    .gamepaper .paper2 td p.note_blue,
+    .gamepaper .paper2 td p.note_green {
+        position: absolute;
+        width: 1.7vw;
+        height: 1.7vw;
+        left: 4%;
+        top: 4%;
+        vertical-align: middle;
+        border-radius: 99em;
+        -webkit-border-radius: 99em;
+        -moz-border-radius: 99em;
+        -o-border-radius: 99em;
+    }
+
+    .gamepaper .paper2 td p.note_red {
+        border: 2px solid #ff3000;
+    }
+
+    .gamepaper .paper2 td p.note_blue {
+        border: 2px solid #3d58ff;
+    }
+
+    .gamepaper .paper2 td p.note_green {
+        top: 0;
+        background: url(../images/note_green2.png) repeat center center;
+        background-size: cover;
+    }
+    /*後蓋前蓋掉*/
+    /*標註左上右下小圓*/
+    .gamepaper .paper2 td .dot_red,
+    .gamepaper .paper2 td .dot_blue {
+        width: 4px;
+        height: 4px;
+    }
+
+
+
+
+    /*空心小圓*/
+    .gamepaper .paper2 td .hollow_circle_red,
+    .gamepaper .paper2 td .hollow_circle_blue {
+        width: 1.6vw;
+        height: 1.6vw;
+        margin: auto;
+        position: relative;
+        display: block;
+        border-radius: 999em;
+        -webkit-border-radius: 999em;
+        -moz-border-radius: 999em;
+    }
+
+    .gamepaper .paper2 td .hollow_circle_red {
+        border: 1px solid #ff3000;
+    }
+
+    .gamepaper .paper2 td .hollow_circle_blue {
+        border: 1px solid #3d58ff;
+    }
+
+
+    /*實心小圓*/
+    .gamepaper .paper2 td .solid_circle_red,
+    .gamepaper .paper2 td .solid_circle_blue {
+        width: 1.6vw;
+        height: 1.6vw;
+        margin-left: 5%;
+        position: relative;
+        display: block;
+        border-radius: 999em;
+        -webkit-border-radius: 999em;
+        -moz-border-radius: 999em;
+    }
+
+    .gamepaper .paper2 td .solid_circle_red {
+        background: #ff3000;
+    }
+
+    .gamepaper .paper2 td .solid_circle_blue {
+        background: #3d58ff;
+    }
+
+
+    /*虛線*/
+    .gamepaper .paper2 td .slash_red,
+    .gamepaper .paper2 td .slash_blue {
+        width: 1.7vw;
+        height: 1.7vw;
+        position: relative;
+    }
+
+    .gamepaper .paper2 td .slash_red {
+        background: url(../images/slash_red.png) no-repeat center center;
+        background-size: cover;
+    }
+
+    .gamepaper .paper2 td .slash_blue {
+        background: url(../images/slash_blue.png) no-repeat center center;
+        background-size: cover;
+    }
+
+
+
+
+
+
+
+    /*-------game 遊戲頁面-------*/
+    #game_content {
+        width: 100%;
+        height: 57vw;
+        font-family: mstiffhei;
+        background: url(../images/game_bg.jpg);
+        background-size: cover;
+        position: relative;
+    }
+
+    .gamepaper .paper2 td p.note_green {
+        top: 0px;
+    }
+    /*
+    #game .game_right .time_area p {
+        width: 58%;
+        font-family: "微软雅黑", "微軟正黑體", "Microsoft JhengHei";
+        font-size: 1vw;
+        line-height: 2.2vw;
+        display: inline-block;
+    }
+    #game .game_right .poker_s {
+        height: 30vw;
+        margin-top: 5%;
+    }
+    #game .game_right .bank,
+    #game .game_right .player {
+        height: 14vw;
+        margin-top: 1vw;
+    }
+
+    #game .game_right .poker_s .t1,
+    #game .game_right .poker_s .t2 {
+        height: 14vw;
+    }
+    #game .game_right .poker_s .t1 p,
+    #game .game_right .poker_s .t2 p {
+        border: 2px solid #FFF;
+    }*/
+
+    /*
+
+    #game .game_right .poker_s .p1,
+    #game .game_right .poker_s .p2 {
+        height: 14vw;
+    }*/
+    #game .game_right .btn_open {
+        height: 6vw;
+        line-height: 6vw;
+        padding: 0 15%;
+        letter-spacing: 0.1em;
+        font-size: 3vw;
+    }
+
+}
+
+@media only screen and (max-width: 640px) {}
+
+@media only screen and (max-width: 480px) {
+    /*index 等待遊戲頁面*/
+    .waiting {
+        width: 30%;
+        height: 30%;
+        color: #FFF;
+        position: absolute;
+        left: 8%;
+        top: 23%;
+    }
+
+    .waiting .t1,
+    .waiting .t2,
+    .waiting .t3 {
+        margin-bottom: 0;
+    }
+    .gamepaper .paper2 td p.note_green {
+        top: 0px;
+    }
+
+
+
+
+
+
+    /*左邊路紙-標註左上右下小圓*/
+    .gamepaper .paper1 td .dot_red {
+        width: 5px;
+        height: 5px;
+    }
+
+    .gamepaper .paper1 td .dot_blue {
+        width: 4px;
+        height: 4px;
+    }
+
+
+
+    /*右邊路紙*/
+    /*標註左上右下小圓*/
+    .gamepaper .paper2 td .dot_red,
+    .gamepaper .paper2 td .dot_blue {
+        width: 2px;
+        height: 2px;
+    }
+
+    /*三個標注: 圓圈與XX*/
+    .gamepaper .paper2 td p.note_red {
+        border: 1px solid #ff3000;
+    }
+
+    .gamepaper .paper2 td p.note_blue {
+        border: 1px solid #3e58ff;
+    }
+
+
+
+
+
+    /*game 遊戲頁面*/
+    #game .game_right .time_area p {
+    width: 60%;
+    font-family: "微软雅黑", "微軟正黑體", "Microsoft JhengHei";
+    font-size: 2.3vw;
+    line-height: 5.2vw;
+    display: inline-block;
+    }
+    #game .game_right .poker_s {
+        height: 30vw;
+        margin-top: 3vw;
+    }
+    #game .game_right .bank,
+    #game .game_right .player {
+        height: 13vw;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+    }
+
+    #game .game_right .poker_s .t1,
+    #game .game_right .poker_s .t2 {
+        height: 13vw;
+    }
+
+    /*#game .game_right .poker_s .t1 p,
+    #game .game_right .poker_s .t2 p {
+        border: 1px solid #FFF;
+    }*/
+
+    #game .game_right .poker_s .p1,
+    #game .game_right .poker_s .p2 {
+        height: 13vw;
+    }
+
+    /*右邊直接開牌鈕*/
+    #game .game_right .btn_open {
+        height: 7vw;
+        line-height: 7vw;
+        padding: 0 1%;
+        letter-spacing: 0.1em;
+        font-size: 4vw;
+    }
+
+
+
+    /*撲克牌上的OPEN鈕*/
+    #game .game_left .btn_area_vertical .btn_open {
+        width: 9vw;
+        height: 9vw;
+        line-height: 9vw;
+        font-size: 3vw;
+    }
+}
